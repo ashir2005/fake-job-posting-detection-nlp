@@ -1,2 +1,399 @@
-# fake-job-posting-detection-nlp
-NLP-based machine learning project for detecting fraudulent job postings using TF-IDF and Logistic Regression.
+# Fake Job Posting Detection Using NLP
+
+## 📌 Project Overview
+
+Fake job advertisements are a major problem in online recruitment platforms. Fraudulent job postings can mislead job seekers by providing false employment opportunities, unrealistic offers, or misleading information.
+
+This project develops a **Natural Language Processing (NLP) based machine learning system** that analyzes job-posting text and classifies it into two categories:
+
+* **REAL** – Legitimate job posting
+* **FAKE** – Fraudulent job posting
+
+The system uses **TF-IDF** for text feature extraction and **Logistic Regression** for classification.
+
+---
+
+## 🎯 Problem Statement
+
+Online recruitment platforms contain a large number of job advertisements. Manually identifying fraudulent advertisements is difficult when the number of postings is large.
+
+The objective of this project is to develop an automated NLP-based system that analyzes the textual content of job advertisements and predicts whether a job posting is **REAL or FAKE**.
+
+---
+
+## 🎯 Objectives
+
+* To collect a real-world fake job posting dataset.
+* To explore and understand the dataset.
+* To analyze missing values and class distribution.
+* To preprocess job-posting text.
+* To combine important textual fields.
+* To convert text into numerical features using TF-IDF.
+* To train a Logistic Regression classification model.
+* To classify job postings as REAL or FAKE.
+* To calculate prediction confidence.
+* To evaluate the model using classification metrics.
+* To visualize the model performance using a confusion matrix.
+* To test the trained model with new job postings.
+
+---
+
+## 📊 Dataset
+
+### Dataset Name
+
+**Real / Fake Job Posting Prediction**
+
+### Dataset Source
+
+Kaggle
+
+### Original Dataset
+
+Employment Scam Aegean Dataset (EMSCAD)
+
+### Dataset Information
+
+The dataset contains job advertisements with textual and non-textual information.
+
+Important fields used in this project include:
+
+* `title`
+* `company_profile`
+* `description`
+* `requirements`
+* `benefits`
+
+The target variable is:
+
+```text
+fraudulent
+```
+
+Target values:
+
+```text
+0 → REAL / Legitimate
+1 → FAKE / Fraudulent
+```
+
+The dataset contains approximately **17,880 job postings and 18 attributes**.
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* Google Colab
+* Pandas
+* NumPy
+* Scikit-learn
+* Matplotlib
+* Seaborn
+* Joblib
+* Regular Expressions
+
+---
+
+## 🧠 NLP Technique
+
+### TF-IDF
+
+**Term Frequency-Inverse Document Frequency (TF-IDF)** is used to convert job-posting text into numerical feature vectors.
+
+The project uses:
+
+* Unigrams
+* Bigrams
+
+For example:
+
+```text
+Unigram:
+software
+
+Bigram:
+software engineer
+```
+
+This allows the model to learn both individual words and short word combinations.
+
+---
+
+## 🤖 Machine Learning Algorithm
+
+### Logistic Regression
+
+Logistic Regression is used for binary classification.
+
+The model predicts:
+
+```text
+0 → REAL
+1 → FAKE
+```
+
+`class_weight="balanced"` is used to reduce the effect of class imbalance in the dataset.
+
+---
+
+## 🔄 Project Workflow
+
+```text
+Kaggle Dataset
+      ↓
+Data Exploration
+      ↓
+Missing Value Analysis
+      ↓
+Text Feature Selection
+      ↓
+Text Combination
+      ↓
+Text Preprocessing
+      ↓
+Train-Test Split
+      ↓
+TF-IDF Feature Extraction
+      ↓
+Logistic Regression
+      ↓
+Probability Prediction
+      ↓
+REAL / FAKE Classification
+      ↓
+Confidence Calculation
+      ↓
+Model Evaluation
+```
+
+---
+
+## 🧹 Text Preprocessing
+
+The following preprocessing operations are performed:
+
+1. Convert text to lowercase.
+2. Remove HTML tags.
+3. Remove URLs.
+4. Remove special characters.
+5. Remove extra whitespace.
+
+The cleaned text is then passed to the TF-IDF vectorizer.
+
+---
+
+## 📚 Training and Testing
+
+The dataset is divided into:
+
+```text
+80% → Training Data
+20% → Testing Data
+```
+
+Stratified splitting is used to maintain the class distribution between the training and testing datasets.
+
+---
+
+## 📈 Model Evaluation
+
+The model is evaluated using:
+
+### Accuracy
+
+Measures the overall percentage of correctly classified job postings.
+
+### Precision
+
+Measures how many job postings predicted as FAKE are actually FAKE.
+
+### Recall
+
+Measures how many actual FAKE job postings are correctly detected.
+
+### F1-Score
+
+Provides a balance between precision and recall.
+
+### Confusion Matrix
+
+Shows:
+
+* True Positives
+* True Negatives
+* False Positives
+* False Negatives
+
+---
+
+## 📊 Results
+
+The actual results are obtained by running the Google Colab notebook.
+
+| Metric    |             Score |
+| --------- | ----------------: |
+| Accuracy  | Add actual result |
+| Precision | Add actual result |
+| Recall    | Add actual result |
+| F1-Score  | Add actual result |
+
+> **Note:** The values above should be replaced with the actual values generated by the trained model.
+
+---
+
+## 🧪 Example Prediction
+
+The trained model can analyze a new job advertisement.
+
+Example input:
+
+```text
+URGENT HIRING!
+
+Work from home and earn $5000 every week.
+No previous experience required.
+Immediate joining available.
+Send your personal information and pay a registration fee
+to secure your employment.
+```
+
+The system produces:
+
+```text
+Real Probability: XX.XX%
+Fake Probability: XX.XX%
+Prediction: FAKE
+Confidence: XX.XX%
+```
+
+The actual probability and confidence depend on the trained model.
+
+---
+
+## 📁 Project Structure
+
+```text
+fake-job-posting-detection-nlp/
+│
+├── README.md
+│
+├── fake_job_detection.ipynb
+│
+├── source_code.py
+│
+├── requirements.txt
+│
+├── dataset/
+│   └── README.md
+│
+├── screenshots/
+│   ├── dataset_preview.png
+│   ├── class_distribution.png
+│   ├── confusion_matrix.png
+│   └── model_performance.png
+│
+├── results/
+│   └── model_results.txt
+│
+└── report/
+    └── Fake_Job_Detection_Report.pdf
+```
+
+---
+
+## 📓 Google Colab Notebook
+
+The main implementation is provided in:
+
+```text
+fake_job_detection.ipynb
+```
+
+The notebook contains:
+
+* Dataset loading
+* Data exploration
+* Missing-value analysis
+* Text preprocessing
+* TF-IDF feature extraction
+* Logistic Regression training
+* Prediction
+* Model evaluation
+* Confusion matrix
+* Confidence analysis
+* New job-posting testing
+* Model saving
+
+---
+
+## 💾 Saved Model
+
+The trained model is saved as:
+
+```text
+fake_job_model.pkl
+```
+
+The TF-IDF vectorizer is saved as:
+
+```text
+tfidf_vectorizer.pkl
+```
+
+These files can be used later for deployment without retraining the model.
+
+---
+
+## ⚠️ Limitations
+
+1. The dataset is highly imbalanced.
+2. The dataset represents job advertisements from an earlier period.
+3. TF-IDF does not provide deep contextual understanding.
+4. Some legitimate jobs may be incorrectly classified as fake.
+5. Some sophisticated fraudulent jobs may be classified as real.
+6. The model depends on patterns present in the training dataset.
+7. The prediction confidence should not be interpreted as proof that a job is actually fraudulent.
+
+---
+
+## 🚀 Future Scope
+
+Possible improvements include:
+
+* BERT and Transformer-based models
+* Multilingual fake-job detection
+* Additional job-posting metadata
+* Explainable AI
+* Real-time fake-job detection
+* Web application
+* Browser extension
+* Continuous model retraining
+* Comparison with SVM, Random Forest and Naive Bayes
+
+---
+
+## 📌 Conclusion
+
+This project demonstrates the application of Natural Language Processing and machine learning to the problem of fraudulent job-posting detection.
+
+Job-posting text is processed using NLP preprocessing techniques and converted into numerical features using TF-IDF. A Logistic Regression model is then trained to classify job advertisements as REAL or FAKE.
+
+The system also provides prediction probabilities and confidence values.
+
+The project demonstrates how NLP can be applied to a practical problem in online recruitment and can serve as a foundation for developing more advanced fraud-detection systems.
+
+---
+
+## 👨‍💻 Author
+
+**Name:** Ashir nasar
+**Register Number:** 24UBC120
+**Department:** BCA
+**College:** Marian College Kutikanam Autonomous
+
+---
+
+## 📜 License
+
+This project is developed for academic and educational purposes.
